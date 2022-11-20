@@ -1,0 +1,33 @@
+
+<div calss="container">
+    <div class="row">
+            <div>    
+                <input name="parcour" placeholder="{{listeArticles.length}}" [(ngModel)]="articleNUmber">
+                <button (click)="parcour()">show</button>
+            <div>
+                <div class="col-md-4 col-sm-6 col-sm-12" >
+        <div *ngFor="let p of listeArticles" >&nbsp;&nbsp;&nbsp;
+                <div *ngIf="p.categorie =='Education'; else notblue">
+                    <div class="card bg-primary text-white" style="width: 18rem;" *ngIf="p.categorie != 'Travail'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.titre}}</h5>
+                            <p class="card-text">auteur : {{p.auteur}}</p>
+                            <p class="card-text">date : {{p.date}}</p>
+                            <p class="card-text">categorie : {{p.categorie}} </p>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #notblue>
+                    <div class="card" style="width: 18rem;" *ngIf="p.categorie != 'Travail'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.titre}}</h5>
+                            <p class="card-text">auteur : {{p.auteur}}</p>
+                            <p class="card-text">date : {{p.date}}</p>
+                            <p class="card-text">categorie : {{p.categorie}} </p>
+                        </div>
+                    </div>
+                </ng-template>
+         </div> 
+        </div>  
+     </div>
+ </div>
